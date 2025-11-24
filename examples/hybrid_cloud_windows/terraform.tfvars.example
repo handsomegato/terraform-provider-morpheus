@@ -1,0 +1,113 @@
+# Example values for Windows Server 2025 Hybrid Cloud Infrastructure
+
+# Morpheus Configuration
+morpheus_url      = "https://your-morpheus-instance.com"
+morpheus_username = "admin"
+morpheus_password = "your-secure-password"
+morpheus_secure   = true
+
+# Environment
+environment = "prod"
+
+###########################################
+# ACTIVE DIRECTORY CONFIGURATION
+###########################################
+ad_domain               = "company.local"
+ad_server              = "dc01.company.local"
+ad_dc_server           = "dc01.company.local"
+ad_service_username    = "svc-morpheus@company.local"
+ad_service_password    = "ServiceAccount123!"
+ad_admin_username      = "Administrator@company.local"
+ad_admin_password      = "DomainAdmin123!"
+ad_search_base_dn      = "DC=company,DC=local"
+ad_required_group_dn   = "CN=Morpheus Users,OU=Security Groups,DC=company,DC=local"
+ad_computer_ou         = "OU=Servers,OU=Computers,DC=company,DC=local"
+ad_safe_mode_password  = "SafeMode123!"
+
+###########################################
+# ON-PREMISES VSPHERE CONFIGURATION
+###########################################
+onprem_location       = "Corporate Datacenter - Building A"
+vsphere_url           = "https://vcenter.company.local/sdk"
+vsphere_username      = "morpheus-svc@company.local"
+vsphere_password      = "vSphereService123!"
+vsphere_datacenter    = "Corporate-DC"
+vsphere_cluster       = "Production-Cluster"
+vsphere_resource_pool = "Production-Pool"
+
+###########################################
+# AZURE HYBRID CONFIGURATION
+###########################################
+azure_location        = "East US"
+azure_client_id       = "12345678-1234-1234-1234-123456789012"
+azure_client_secret   = "azure-service-principal-secret"
+azure_tenant_id       = "87654321-4321-4321-4321-210987654321"
+azure_subscription_id = "abcdef12-3456-7890-abcd-ef1234567890"
+azure_resource_group  = "morpheus-hybrid-prod-rg"
+azure_key_pair        = "morpheus-azure-keypair"
+
+###########################################
+# WINDOWS SERVER 2025 CONFIGURATION
+###########################################
+windows_admin_password = "Windows2025Admin!@#"
+dc_ip_address         = "10.0.100.10"
+
+# Instance Sizing
+dc_cpu_cores    = 4
+dc_memory_gb    = 8
+dc_storage_gb   = 150
+
+fs_cpu_cores    = 6
+fs_memory_gb    = 16
+fs_storage_gb   = 1000
+
+web_cpu_cores   = 4
+web_memory_gb   = 8
+web_storage_gb  = 200
+
+###########################################
+# NETWORK CONFIGURATION
+###########################################
+infrastructure_vlan_id = 100
+dmz_vlan_id           = 200
+infrastructure_subnet  = "10.0.100.0/24"
+dmz_subnet            = "10.0.200.0/24"
+
+###########################################
+# BACKUP AND MONITORING
+###########################################
+backup_enabled        = true
+backup_retention_days = 30
+monitoring_enabled    = true
+
+###########################################
+# SECURITY CONFIGURATION
+###########################################
+enable_windows_defender  = true
+enable_windows_firewall  = true
+antimalware_enabled     = true
+enable_bitlocker        = false
+
+###########################################
+# LICENSING CONFIGURATION
+###########################################
+windows_license_type    = "AHUB"  # Use Azure Hybrid Benefit
+office_365_integration = true
+
+###########################################
+# TAGGING CONFIGURATION
+###########################################
+default_tags = {
+  ManagedBy     = "terraform"
+  Environment   = "production"
+  OS            = "Windows Server 2025"
+  Criticality   = "High"
+  BackupPolicy  = "Daily"
+  Department    = "IT Infrastructure"
+  CostCenter    = "IT-INFRA-001"
+  Owner         = "infrastructure-team@company.com"
+}
+
+project_name = "hybrid-infrastructure-2025"
+cost_center  = "IT-INFRA-001"
+owner        = "infrastructure-team@company.com"

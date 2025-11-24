@@ -1,0 +1,37 @@
+# Example terraform.tfvars file
+# Copy this file to terraform.tfvars and fill in your actual values
+
+# Morpheus connection settings
+morpheus_url      = "https://your-morpheus-instance.com"
+morpheus_username = "your-username"
+morpheus_password = "your-password"
+# morpheus_access_token = "your-access-token"  # Alternative to username/password
+morpheus_secure   = true  # Set to false for self-signed certificates
+
+# Infrastructure settings
+cloud_name         = "Your-AWS-Cloud"
+group_name         = "Default"
+network_name       = "Your-Subnet"
+resource_pool_name = "Your-VPC"
+plan_name          = "T3 Small - 2 Core, 2GB Memory"
+provision_type     = "Amazon EC2"
+
+# Instance settings
+instance_name = "terraform-example"
+project_name  = "my-terraform-project"
+api_key       = "your-api-key-here"
+
+# User management (optional)
+new_username    = "terraform-user"
+first_name      = "Terraform"
+last_name       = "User"
+email           = "terraform-user@example.com"
+user_password   = "secure-password-here"
+role_id         = 3  # Standard user role ID
+
+# Group management (optional)
+new_group_name  = "Terraform Group"
+group_location  = "us-east-1"
+
+# Environment
+environment = "dev"
